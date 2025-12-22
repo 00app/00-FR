@@ -1,0 +1,158 @@
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Zero Zero Design System - Updated for mobile-first */
+  --background: #000000;
+  --foreground: #FFFFFF;
+  --text-secondary: #BEBEBE;
+  --divider: rgba(255, 255, 255, 0.15);
+  --border: rgba(255, 255, 255, 0.15);
+  
+  /* Typography - Roboto Extra Bold */
+  --font-heading: 'Roboto', sans-serif;
+  --font-body: 'Roboto', sans-serif;
+  
+  /* Type Scale - Mobile First */
+  --text-h1: 60px;
+  --text-h2: 50px;
+  --text-h3: 30px;
+  --text-h4: 20px;
+  --text-body: 16px;
+  
+  /* Line height */
+  --line-height-tight: 0.94;
+  
+  /* Spacing */
+  --spacing-section: 80px;
+  --spacing-component: 40px;
+  --spacing-padding: 24px;
+  --tap-target: 64px;
+  
+  /* Border Radius */
+  --radius-pill: 9999px;
+  --radius-card: 40px;
+  
+  /* Animation */
+  --animation-duration: 200ms;
+  --animation-stagger: 40ms;
+  
+  /* Legacy vars for compatibility */
+  --font-size: 16px;
+  --card: #FFFFFF;
+  --card-foreground: #000000;
+  --popover: #000000;
+  --popover-foreground: #FFFFFF;
+  --primary: #FFFFFF;
+  --primary-foreground: #000000;
+  --secondary: transparent;
+  --secondary-foreground: #FFFFFF;
+  --muted: #BEBEBE;
+  --muted-foreground: #BEBEBE;
+  --accent: #FFFFFF;
+  --accent-foreground: #000000;
+  --destructive: #FFFFFF;
+  --destructive-foreground: #000000;
+  --input: transparent;
+  --input-background: transparent;
+  --switch-background: rgba(255, 255, 255, 0.15);
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 900;
+  --ring: rgba(255, 255, 255, 0.5);
+  --radius: 0px;
+  
+  /* Charts not needed but keeping for compatibility */
+  --chart-1: #FFFFFF;
+  --chart-2: #FFFFFF;
+  --chart-3: #FFFFFF;
+  --chart-4: #FFFFFF;
+  --chart-5: #FFFFFF;
+}
+
+.dark {
+  /* Same as root - we're always in dark mode for Zero Zero */
+  --background: #000000;
+  --foreground: #FFFFFF;
+  --card: #FFFFFF;
+  --card-foreground: #000000;
+  --popover: #000000;
+  --popover-foreground: #FFFFFF;
+  --primary: #FFFFFF;
+  --primary-foreground: #000000;
+  --secondary: transparent;
+  --secondary-foreground: #FFFFFF;
+  --muted: #BEBEBE;
+  --muted-foreground: #BEBEBE;
+  --accent: #FFFFFF;
+  --accent-foreground: #000000;
+  --destructive: #FFFFFF;
+  --destructive-foreground: #000000;
+  --border: rgba(255, 255, 255, 0.15);
+  --input: transparent;
+  --ring: rgba(255, 255, 255, 0.5);
+  --chart-1: #FFFFFF;
+  --chart-2: #FFFFFF;
+  --chart-3: #FFFFFF;
+  --chart-4: #FFFFFF;
+  --chart-5: #FFFFFF;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-input-background: var(--input-background);
+  --color-switch-background: var(--switch-background);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+
+/* Animation utilities */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp var(--animation-duration) ease-out;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
