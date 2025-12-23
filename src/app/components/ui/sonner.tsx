@@ -2,6 +2,8 @@
 
 import { Toaster as Sonner, ToasterProps } from "sonner";
 
+// Toaster component for notifications (no theme switching needed)
+
 const Toaster = ({ ...props }: ToasterProps) => {
   return (
     <Sonner
